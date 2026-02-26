@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ffcc"
+version = "0.1.0"
+description = "Fast Fourier Color Constancy — Python reimplementation of the FFCC algorithm (Barron & Tsai, CVPR 2017)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Shuwei Yue", email = "shuwei_yue@szpu.edu.cn"},
+]
+keywords = ["color-constancy", "white-balance", "illuminant-estimation", "computer-vision", "ffcc"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+]
+
+[project.optional-dependencies]
+benchmark = [
+    "opencv-python>=4.5",
+]
+dev = [
+    "pytest>=7.0",
+    "opencv-python>=4.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/shuwei666/ffcc-python"
+Repository = "https://github.com/shuwei666/ffcc-python"
+Author = "https://shuweiyue.com"
+
+[tool.setuptools.packages.find]
+include = ["ffcc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
